@@ -20,29 +20,30 @@ else:
 result = "large" if x > 10 else "small"
 
 
+
 ### 3. 문자열 연결
-# # #안좋은 예:
+# 안좋은 예:
 s = ""
 for word in words:
     s += word + " "
 
-# # #좋은 예:
+# 좋은 예:
 s = " ".join(words)
 
 
 ### 4. 파일 열기 후 자동 닫기 - 컨텍스트 관리자(with)를 사용하여 파일을 자동으로 닫도록 작성.
-# # #안좋은 예:
+# 안좋은 예:
 f = open('file.txt', 'r')
 data = f.read()
 f.close()
 
-# # #좋은 예:
+# 좋은 예:
 with open('file.txt', 'r') as f:
     data = f.read()
 
 
 ### 5. 딕셔너리 키 검사 - get() 메서드를 사용하여 코드가 더 간결해짐.
-# # #안좋은 예:
+# 안좋은 예:
 if 'key' in my_dict:
     value = my_dict['key']
 else:
@@ -54,7 +55,7 @@ value = my_dict.get('key', None)
 
 
 ### 6. 다중 조건문 - 삼항 연산자를 중첩하여 더 간결하게 작성.
-# # #안좋은 예:
+# 안좋은 예:
 if x > 10:
     result = "large"
 elif x > 5:
@@ -62,34 +63,34 @@ elif x > 5:
 else:
     result = "small"
 
-# # #좋은 예:
+# 좋은 예:
 result = "large" if x > 10 else "medium" if x > 5 else "small"
 
 
 ### 7. 빈 리스트 체크 - 빈 리스트 체크 시, len() 함수 대신 리스트 자체를 조건식에 사용할 수 있음.
-# # #안좋은 예:
+# 안좋은 예:
 if len(my_list) > 0:
     print("List is not empty")
 
-# # #좋은 예:
+# 좋은 예:
 if my_list:
     print("List is not empty")
 
 
 ### 8. 함수 인자 기본값 설정 - 기본값 인자를 설정하여 코드가 더 직관적이고 깔끔해짐.
-# # #안좋은 예:
+# 안좋은 예:
 def add(x, y):
     if y is None:
         y = 0
     return x + y
 
-# # #좋은 예:
+# 좋은 예:
 def add(x, y=0):
     return x + y
 
 
 ### 9. 중복 코드 제거 - 중복된 반복문을 하나로 합쳐서 코드 중복을 제거.
-# # #안좋은 예:
+# 안좋은 예:
 def process_data(data):
     for i in data:
         print(i)
@@ -97,7 +98,7 @@ def process_data(data):
         if i > 0:
             print(i)
 
-# # #좋은 예:
+# 좋은 예:
 def process_data(data):
     for i in data:
         print(i)
@@ -107,14 +108,14 @@ def process_data(data):
 
 
 ### 10. 반복문에서의 else 사용 - else 문이 반복문과 함께 사용될 때 유용하지만, 경우에 따라 직관적이지 않게 느껴질 수 있습니다.
-# #안좋은 예:
+# 안좋은 예:
 for item in items:
     if item == target:
         found = True
         break
 else:
     found = False
-# #좋은 예:
+# 좋은 예:
 for item in items:
     if item == target:
         found = True
@@ -125,9 +126,9 @@ else:
 
 
 ### 11. 정수 나누기 - 정수 나누기는 //를 사용하여 더 직관적으로 작성.
-# #안좋은 예:
+# 안좋은 예:
 result = int(a / b)
-# #좋은 예:
+# 좋은 예:
 result = a // b
 
 ### 12. 불필요한 else 문 - else 없이 if 문만 사용해도 충분한 경우가 많음.

@@ -12,7 +12,9 @@ nCr = itertools.combinations(arr, 2)
 print(list(nCr)) # [('A', 'B'), ('A', 'C'), ('B', 'C')]
 
 
-### 값이 주어졌을 때 합이 125인 조합 찾기
+
+
+### 예제) 값이 주어졌을 때 합이 125인 조합 찾기
 import itertools
 
 # 숫자와 그에 해당하는 값들

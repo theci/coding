@@ -9,3 +9,21 @@ def hap(a, b):
     return ret
 
 result = hap(3, 4) # INFO:root:input: 3 4, output=7
+
+
+
+
+### 위 함수를 클래스로 만든 코드
+class Logger:
+    def __init__(self):
+        # 로깅 설정
+        logging.basicConfig(level=logging.INFO)
+    
+    def hap(self, a, b):
+        ret = a + b
+        logging.info(f"input: {a} {b}, output={ret}")
+        return ret
+
+# 클래스 사용 예시
+logger = Logger()
+result = logger.hap(3, 4)  # INFO:root:input: 3 4, output=7

@@ -1,37 +1,41 @@
+# ¹®Á¦Á¡
 import time
 
-def elapsed(original_func):   # ê¸°ì¡´ í•¨ìˆ˜ë¥¼ ì¸ìˆ˜ë¡œ ë°›ëŠ”ë‹¤.
+
+def elapsed(original_func):   # ±âÁ¸ ÇÔ¼ö¸¦ ÀÎ¼ö·Î ¹Ş´Â´Ù.
     def wrapper():
         start = time.time()
-        result = original_func()    # ê¸°ì¡´ í•¨ìˆ˜ë¥¼ ìˆ˜í–‰í•œë‹¤.
+        result = original_func()    # ±âÁ¸ ÇÔ¼ö¸¦ ¼öÇàÇÑ´Ù.
         end = time.time()
-        print("í•¨ìˆ˜ ìˆ˜í–‰ì‹œê°„: %f ì´ˆ" % (end - start))  # ê¸°ì¡´ í•¨ìˆ˜ì˜ ìˆ˜í–‰ì‹œê°„ì„ ì¶œë ¥í•œë‹¤.
-        return result  # ê¸°ì¡´ í•¨ìˆ˜ì˜ ìˆ˜í–‰ ê²°ê³¼ë¥¼ ë¦¬í„´í•œë‹¤.
+        print("ÇÔ¼ö ¼öÇà½Ã°£: %f ÃÊ" % (end - start))  # ±âÁ¸ ÇÔ¼öÀÇ ¼öÇà½Ã°£À» Ãâ·ÂÇÑ´Ù.
+        return result  # ±âÁ¸ ÇÔ¼öÀÇ ¼öÇà °á°ú¸¦ ¸®ÅÏÇÑ´Ù.
     return wrapper
 
 @elapsed
 def myfunc():
-    print("í•¨ìˆ˜ê°€ ì‹¤í–‰ë©ë‹ˆë‹¤.")
+    print("ÇÔ¼ö°¡ ½ÇÇàµË´Ï´Ù.")
+
+myfunc()  # ÇÔ¼ö°¡ ½ÇÇàµË´Ï´Ù.
+myfunc("You need python")  # ¿¡·¯°¡ ³­´Ù. ÀÎ¼ö¾ø´Â wrapperÇÔ¼ö·Î ±¸ÇöÇß±â ¶§¹®
 
 
-myfunc("You need python")  # ì—ëŸ¬ê°€ ë‚œë‹¤. ì¸ìˆ˜ì—†ëŠ” wrapperí•¨ìˆ˜ë¡œ êµ¬í˜„í–ˆê¸° ë•Œë¬¸
 
-### ëª¨ë“  ì…ë ¥ ì¸ìˆ˜ë¥¼ ë°›ëŠ” íŒŒë¼ë¯¸í„° êµ¬í˜„
-
+### ¸ğµç ÀÔ·Â ÀÎ¼ö¸¦ ¹Ş´Â ÆÄ¶ó¹ÌÅÍ ±¸Çö
 import time
 
-def elapsed(original_func):   # ê¸°ì¡´ í•©ìˆ˜ë¥¼ ì¸ìˆ˜ë¡œ ë°›ëŠ”ë‹¤.
-    def wrapper(*args, **kwargs):   # *args, **kwargs íŒŒë¼ë¯¸í„° ì¶”ê°€
+
+def elapsed(original_func):   # ±âÁ¸ ÇÕ¼ö¸¦ ÀÎ¼ö·Î ¹Ş´Â´Ù.
+    def wrapper(*args, **kwargs):   # *args, **kwargs ÆÄ¶ó¹ÌÅÍ Ãß°¡
         start = time.time()
-        result = original_func(*args, **kwargs)  # ì „ë‹¬ë°›ì€ *args, **kwargsë¥¼ ì…ë ¥íŒŒë¼ë¯¸í„°ë¡œ ê¸°ì¡´í•¨ìˆ˜ ìˆ˜í–‰
+        result = original_func(*args, **kwargs)  # Àü´Ş¹ŞÀº *args, **kwargs¸¦ ÀÔ·ÂÆÄ¶ó¹ÌÅÍ·Î ±âÁ¸ÇÔ¼ö ¼öÇà
         end = time.time()
-        print("í•¨ìˆ˜ ìˆ˜í–‰ì‹œê°„: %f ì´ˆ" % (end - start))  # ìˆ˜í–‰ì‹œê°„ì„ ì¶œë ¥í•œë‹¤.
-        return result  # í•¨ìˆ˜ì˜ ê²°ê³¼ë¥¼ ë¦¬í„´í•œë‹¤.
+        print("ÇÔ¼ö ¼öÇà½Ã°£: %f ÃÊ" % (end - start))  # ¼öÇà½Ã°£À» Ãâ·ÂÇÑ´Ù.
+        return result  # ÇÔ¼öÀÇ °á°ú¸¦ ¸®ÅÏÇÑ´Ù.
     return wrapper
 
 @elapsed
 def myfunc(msg):
-    """ ë°ì½”ë ˆì´í„° í™•ì¸ í•¨ìˆ˜ """
-    print("'%s'ì„ ì¶œë ¥í•©ë‹ˆë‹¤." % msg)
+    """ µ¥ÄÚ·¹ÀÌÅÍ È®ÀÎ ÇÔ¼ö """
+    print("'%s'À» Ãâ·ÂÇÕ´Ï´Ù." % msg)
 
 myfunc("You need python")
