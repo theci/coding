@@ -59,7 +59,7 @@ a = all([0, 1, 2]) # False
 
 # any - iterable한 객체를 인수로 받아서 원소가 하나라도 참이면 True, 아니면 False를 반환
 a = any([0, 1, 2]) # True
-a = any([0, False, []] # False
+a = any([0, False, []]) # False
             
 # chain - iterable한 객체들을 인수로 받아 하나의 iterator로 반환
 c1 = [1, 2]
