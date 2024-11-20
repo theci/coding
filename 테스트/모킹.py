@@ -3,7 +3,7 @@ from unittest import mock
 
 import requests
 from constants import STATUS_ENDPOINT
-from mock_2 import BuildStatus
+from mock import BuildStatus
 
 # Mocking은 실제 외부 시스템이나 의존성(예: API 호출, 데이터베이스 연결 등)을 대신하여 가짜 객체(mock)를 사용하여 테스트하는 기법입니다. 
 # 이를 통해 테스트가 외부 의존성에 영향을 받지 않도록 할 수 있습니다.

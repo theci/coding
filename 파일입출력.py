@@ -10,8 +10,13 @@ f.close()
 
 
 # 새로운 파일 쓰기
-
+with open('c:/programing/python/data/ex_memo.txt', 'w') as f:
+    for student in students:
+        msg = student
+        f.write(msg+"\n")
+        
 # 기존 파일 읽기
+
 
 
 # 기존 파일에 내용 추가
